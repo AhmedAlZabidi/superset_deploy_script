@@ -33,13 +33,14 @@ fi
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev libffi-dev python3.8 python3.8-dev python3-pip python3.8-venv libsasl2-dev libldap2-dev nginx
 
-mkdir app
-cd app
+mkdir ~/app
+cd ~/app
 
 python3.8 -m venv venv
 . venv/bin/activate
 
-pip install --upgrade setuptools apache-superset gevent pip
+pip install --upgrade setuptools pip
+pip install apache-superset gevent
 
 superset db upgrade
 export FLASK_APP=superset
